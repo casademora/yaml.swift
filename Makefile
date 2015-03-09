@@ -1,6 +1,6 @@
 module-name = Yaml
 sources = Operators.swift Result.swift Regex.swift Tokenizer.swift Parser.swift Yaml.swift
-sdk = $$(xcrun --show-sdk-path --sdk macosx)
+sdk = $$(xcrun --show-sdk-path --sdk iphonesimulator)
 flags =
 
 debug:   flags += -g
@@ -17,6 +17,7 @@ build/libyaml.dylib: $(sources) | build
 		-emit-library \
 		-module-name $(module-name) \
 		-sdk $(sdk) \
+		-target x86_64-apple-ios8.0 \
 		-o $@ \
 		$(flags) \
 		$^
