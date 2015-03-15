@@ -1,6 +1,7 @@
 module-name = Yaml
 sources = Operators.swift Result.swift Regex.swift Tokenizer.swift Parser.swift Yaml.swift
 sdk = $$(xcrun --show-sdk-path --sdk iphonesimulator)
+target = x86_64-apple-ios8.3
 flags =
 
 debug:   flags += -g
@@ -17,7 +18,7 @@ build/libyaml.dylib: $(sources) | build
 		-emit-library \
 		-module-name $(module-name) \
 		-sdk $(sdk) \
-		-target x86_64-apple-ios8.0 \
+		-target $(target) \
 		-o $@ \
 		$(flags) \
 		$^
@@ -28,12 +29,14 @@ build/Yaml.swiftmodule: build/libyaml.dylib
 		-emit-module \
 		-module-name $(module-name) \
 		-sdk $(sdk) \
+		-target $(target) \
 		-o $@ \
 		$(sources)
 
 build/test: Test.swift build/Yaml.swiftmodule
 	@echo Build test...
 	@xcrun swiftc \
+		-target $(target) \
 		-emit-executable \
 		-sdk $(sdk) \
 		-I build \
