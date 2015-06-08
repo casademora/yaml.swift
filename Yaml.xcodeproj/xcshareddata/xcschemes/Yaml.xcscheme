@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C77A85E21AB604C100ED6D25"
+               BlueprintIdentifier = "8E1D76201B258FEE0022C013"
                BuildableName = "Yaml.framework"
                BlueprintName = "Yaml"
                ReferencedContainer = "container:Yaml.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C77A85EC1AB604C100ED6D25"
+               BlueprintIdentifier = "8E1D762B1B258FEE0022C013"
                BuildableName = "YamlTests.xctest"
                BlueprintName = "YamlTests"
                ReferencedContainer = "container:Yaml.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C77A85EC1AB604C100ED6D25"
+               BlueprintIdentifier = "8E1D762B1B258FEE0022C013"
                BuildableName = "YamlTests.xctest"
                BlueprintName = "YamlTests"
                ReferencedContainer = "container:Yaml.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C77A85E21AB604C100ED6D25"
+            BlueprintIdentifier = "8E1D76201B258FEE0022C013"
             BuildableName = "Yaml.framework"
             BlueprintName = "Yaml"
             ReferencedContainer = "container:Yaml.xcodeproj">
@@ -75,7 +75,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C77A85E21AB604C100ED6D25"
+            BlueprintIdentifier = "8E1D76201B258FEE0022C013"
             BuildableName = "Yaml.framework"
             BlueprintName = "Yaml"
             ReferencedContainer = "container:Yaml.xcodeproj">
@@ -93,7 +93,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C77A85E21AB604C100ED6D25"
+            BlueprintIdentifier = "8E1D76201B258FEE0022C013"
             BuildableName = "Yaml.framework"
             BlueprintName = "Yaml"
             ReferencedContainer = "container:Yaml.xcodeproj">
