@@ -155,9 +155,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8E1D76201B258FEE0022C013 /* Yaml */ = {
+		8E1D76201B258FEE0022C013 /* Yaml (Mac) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E1D76391B258FEE0022C013 /* Build configuration list for PBXNativeTarget "Yaml" */;
+			buildConfigurationList = 8E1D76391B258FEE0022C013 /* Build configuration list for PBXNativeTarget "Yaml (Mac)" */;
 			buildPhases = (
 				8E1D761C1B258FEE0022C013 /* Sources */,
 				8E1D761D1B258FEE0022C013 /* Frameworks */,
@@ -168,7 +168,7 @@
 			);
 			dependencies = (
 			);
-			name = Yaml;
+			name = "Yaml (Mac)";
 			productName = Yaml;
 			productReference = 8E1D76211B258FEE0022C013 /* Yaml.framework */;
 			productType = "com.apple.product-type.framework";
@@ -197,6 +197,7 @@
 		8EF2541A1B258FB4001BCEBE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				TargetAttributes = {
 					8E1D76201B258FEE0022C013 = {
@@ -219,7 +220,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8E1D76201B258FEE0022C013 /* Yaml */,
+				8E1D76201B258FEE0022C013 /* Yaml (Mac) */,
 				8E1D762B1B258FEE0022C013 /* YamlTests */,
 			);
 		};
@@ -270,7 +271,7 @@
 /* Begin PBXTargetDependency section */
 		8E1D762F1B258FEE0022C013 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8E1D76201B258FEE0022C013 /* Yaml */;
+			target = 8E1D76201B258FEE0022C013 /* Yaml (Mac) */;
 			targetProxy = 8E1D762E1B258FEE0022C013 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -324,7 +325,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Yaml;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -374,7 +375,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Yaml;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -490,7 +491,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8E1D76391B258FEE0022C013 /* Build configuration list for PBXNativeTarget "Yaml" */ = {
+		8E1D76391B258FEE0022C013 /* Build configuration list for PBXNativeTarget "Yaml (Mac)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E1D76351B258FEE0022C013 /* Debug */,
