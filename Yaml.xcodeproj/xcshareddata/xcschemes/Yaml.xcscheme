@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8E1D76201B258FEE0022C013"
-               BuildableName = "Yaml (Mac).framework"
+               BuildableName = "Yaml.framework"
                BlueprintName = "Yaml (Mac)"
                ReferencedContainer = "container:Yaml.xcodeproj">
             </BuildableReference>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8E1D762B1B258FEE0022C013"
-               BuildableName = "YamlTests.xctest"
-               BlueprintName = "YamlTests"
+               BuildableName = "YamlTests_Mac.xctest"
+               BlueprintName = "YamlTests (Mac)"
                ReferencedContainer = "container:Yaml.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8E1D762B1B258FEE0022C013"
-               BuildableName = "YamlTests.xctest"
-               BlueprintName = "YamlTests"
+               BuildableName = "YamlTests_Mac.xctest"
+               BlueprintName = "YamlTests (Mac)"
                ReferencedContainer = "container:Yaml.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E1D76201B258FEE0022C013"
-            BuildableName = "Yaml (Mac).framework"
+            BuildableName = "Yaml.framework"
             BlueprintName = "Yaml (Mac)"
             ReferencedContainer = "container:Yaml.xcodeproj">
          </BuildableReference>
@@ -79,7 +79,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E1D76201B258FEE0022C013"
-            BuildableName = "Yaml (Mac).framework"
+            BuildableName = "Yaml.framework"
             BlueprintName = "Yaml (Mac)"
             ReferencedContainer = "container:Yaml.xcodeproj">
          </BuildableReference>
@@ -97,7 +97,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E1D76201B258FEE0022C013"
-            BuildableName = "Yaml (Mac).framework"
+            BuildableName = "Yaml.framework"
             BlueprintName = "Yaml (Mac)"
             ReferencedContainer = "container:Yaml.xcodeproj">
          </BuildableReference>
