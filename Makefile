@@ -1,18 +1,29 @@
-module-name = Yaml
-sources = Operators.swift Result.swift Regex.swift Tokenizer.swift Parser.swift Yaml.swift
-sdk = $$(xcrun --show-sdk-path --sdk iphonesimulator)
-target = x86_64-apple-ios8.3
-flags =
+# Usage: make [CONFIG=debug|release]
+# Make file is based on:
+#   http://owensd.io/2015/01/14/compiling-swift-without-xcode.html
 
-debug:   flags += -g
-release: flags += -O
+MODULE_NAME   = Yaml
+SDK           = macosx
 
-all: build/libyaml.dylib build/Yaml.swiftmodule
+CONFIG       ?= debug
 
-debug:   all
-release: all
+ROOT_DIR      = $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+BUILD_DIR    = $(ROOT_DIR)/build
+TARGET_DIR    = $(BUILD_DIR)/$(SDK)/$(CONFIG)
+FRAMEWORK_DIR = $(TARGET_DIR)/$(MODULE_NAME).framework
+SRC_DIR       = $(ROOT_DIR)
 
-build/libyaml.dylib: $(sources) | build
+ifeq ($(CONFIG), debug)
+	CFLAGS=-Onone -g
+else
+	CFLAGS=-O -whole-module-optimization
+endif
+
+SWIFTC      = $(shell xcrun -f swiftc)
+SDK_PATH    = $(shell xcrun --show-sdk-path --sdk $(SDK))
+SWIFT_FILES = $(shell find $(SRC_DIR) -name '*.swift' -not -name 'Test.swift' -type f)
+
+all: $(FRAMEWORK_DIR)
 	@echo Build lib...
 	@xcrun swiftc \
 		-emit-library \
@@ -23,36 +34,34 @@ build/libyaml.dylib: $(sources) | build
 		$(flags) \
 		$^
 
-build/Yaml.swiftmodule: build/libyaml.dylib
-	@echo Build swiftmodule...
-	@xcrun swiftc \
+$(FRAMEWORK_DIR): $(SWIFT_FILES)
+	@echo Build framework...
+	@rm -rf $(FRAMEWORK_DIR)
+	@mkdir -p $(FRAMEWORK_DIR)
+	@$(SWIFTC) $(SWIFT_FILES) \
+		$(CFLAGS) \
+		-sdk $(SDK_PATH) \
+		-module-name $(MODULE_NAME) \
 		-emit-module \
-		-module-name $(module-name) \
+		-emit-module-path $(FRAMEWORK_DIR)/$(MODULE_NAME).swiftmodule \
 		-sdk $(sdk) \
-		-target $(target) \
-		-o $@ \
-		$(sources)
+		-o $(FRAMEWORK_DIR)/$(MODULE_NAME)
 
-build/test: Test.swift build/Yaml.swiftmodule
+$(BUILD_DIR)/test: Test.swift $(FRAMEWORK_DIR)
 	@echo Build test...
-	@xcrun swiftc \
-		-target $(target) \
+	@$(SWIFTC) Test.swift \
+		-sdk $(SDK_PATH) \
 		-emit-executable \
-		-sdk $(sdk) \
-		-I build \
-		-L build \
-		-lyaml \
-		-o $@ \
-		$<
+		-I $(FRAMEWORK_DIR) \
+		-F $(TARGET_DIR) \
+		-framework $(MODULE_NAME) \
+		-o $@
+test: $(BUILD_DIR)/test
 
-build:
-	@mkdir -p $@
-
-test: build/test
 	@echo Testing...
-	@build/test
+	@$(BUILD_DIR)/test
 
 clean:
-	@rm -rf build
+	@rm -rf $(BUILD_DIR)
 
-.PHONY: clean test
+.PHONY: all test clean
